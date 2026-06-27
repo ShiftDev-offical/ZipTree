@@ -1,18 +1,20 @@
-/* تصميم نيون احترافي ومستقبلي (Cyberpunk / Neon Tech Style) */
+/* تصميم نيون احترافي ومستقبلي متناسق مع هوية ShiftDiv */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
 :root {
-    --bg-dark: #0a0c10;       /* خلفية شديدة السواد لإبراز النيون */
-    --bg-card: #bb29bb;       /* خلفية الحاويات والهيدر */
-    --bg-input: #181d2a;      /* خلفية صناديق المدخلات */
+    --bg-dark: #0a0813;        /* خلفية بنفسجية سيبرانية شديدة العمق والسواد لإبراز النيون */
+    --bg-card: #120f24;       /* خلفية الحاويات والهيدر متناسقة مع الكوفر */
+    --bg-input: #1b1635;      /* خلفية صناديق المدخلات */
     
-    /* ألوان النيون المضيئة */
-    --neon-cyan: #00f2fe;     /* نيون سيان للأساسيات والظلال */
-    --neon-purple: #4facfe;   /* نيون أزرق متدرج مع البنفسجي */
-    --neon-green: #39ff14;    /* نيون أخضر مخصص للشجرة والأكواد */
-    --neon-pink: #ff007f;     /* نيون بينك مخصص للشارات والتأثيرات */
+    /* ألوان النيون المضيئة لبراند ShiftDiv */
+    --neon-purple: #8b5cf6;   /* البنفسجي الأساسي للبراند */
+    --neon-cyan: #06b6d4;     /* السيان المضيء للعناصر التفاعلية الأساسية */
+    --neon-green: #a855f7;    /* جعلنا نص شجرة الملفات بنفسجي نيون مضيء ومريح جداً للعين */
+    --neon-pink: #ec4899;     /* نيون بينك مخصص للشارات والتأثيرات النابضة */
     
-    --text-primary: #f1f5f9;  
-    --text-muted: #64748b;     
-    --border-subtle: #1e293b; 
+    --text-primary: #f8fafc;  
+    --text-muted: #94a3b8;     
+    --border-subtle: #2e2557;   /* حدود بنفسجية داكنة متناسقة */
 }
 
 * {
@@ -31,7 +33,7 @@ body {
     line-height: 1.6;
 }
 
-/* هيدر نيون محترم */
+/* هيدر نيون احترافي متناسق مع براند ShiftDiv */
 .main-header {
     background-color: var(--bg-card);
     border-bottom: 2px solid var(--border-subtle);
@@ -39,8 +41,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    /* ظل نيون خفيف أسفل الهيدر */
-    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.1);
+    /* ظل نيون بنفسجي مذهل أسفل الهيدر */
+    box-shadow: 0 4px 25px rgba(139, 92, 246, 0.15);
 }
 
 .header-container {
@@ -59,8 +61,8 @@ body {
 
 .brand-logo {
     font-size: 1.5rem;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 10px var(--neon-cyan);
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
 }
 
 .brand-name {
@@ -127,10 +129,10 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 12px;
-    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-cyan));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.3));
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.4));
 }
 
 .subtitle {
@@ -140,29 +142,29 @@ body {
     margin: 0 auto;
 }
 
-/* صندوق رفع الملفات النيون المضيء */
+/* صندوق رفع الملفات النيون المضيء المتناسق مع الواجهة */
 .upload-box {
     background-color: var(--bg-card);
-    border: 2px dashed var(--neon-cyan);
+    border: 2px dashed var(--neon-purple);
     padding: 50px 20px;
     text-align: center;
     border-radius: 14px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.05);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .upload-box:hover, .upload-box.dragover {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 25px rgba(0, 242, 254, 0.3), inset 0 0 15px rgba(0, 242, 254, 0.1);
-    background-color: #151a28;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.1);
+    background-color: #16122c;
     transform: translateY(-3px);
 }
 
 .upload-icon {
     font-size: 3rem;
     margin-bottom: 15px;
-    filter: drop-shadow(0 0 10px var(--neon-cyan));
+    filter: drop-shadow(0 0 10px var(--neon-purple));
 }
 
 #uploadText {
@@ -183,10 +185,10 @@ input[type="file"] {
     display: none;
 }
 
-/* زر التحميل النيون المتوهج */
+/* زر التحميل النيون المتوهج بالألوان المتدرجة للبراند */
 .btn-action {
-    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
-    color: #000;
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-cyan));
+    color: #fff;
     border: none;
     padding: 15px 35px;
     border-radius: 10px;
@@ -197,11 +199,11 @@ input[type="file"] {
     font-size: 1.05rem;
     font-family: 'Cairo', sans-serif;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
 .btn-action:hover {
-    box-shadow: 0 0 35px rgba(0, 242, 254, 0.7);
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.7);
     transform: translateY(-2px);
     letter-spacing: 0.5px;
 }
@@ -213,11 +215,11 @@ input[type="file"] {
     border-radius: 14px;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .output-header {
-    background-color: #0b0d14;
+    background-color: #070510;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -235,29 +237,29 @@ input[type="file"] {
 .status-badge {
     font-size: 0.8rem;
     padding: 5px 12px;
-    background-color: rgba(255, 0, 127, 0.1);
+    background-color: rgba(236, 72, 153, 0.1);
     color: var(--neon-pink);
     border: 1px solid var(--neon-pink);
     border-radius: 6px;
     font-weight: 600;
     text-shadow: 0 0 5px var(--neon-pink);
-    box-shadow: 0 0 8px rgba(255, 0, 127, 0.2);
+    box-shadow: 0 0 8px rgba(236, 72, 153, 0.2);
 }
 
-/* شجرة الأكواد باللون الأخضر النيون Matrix Style */
+/* شجرة الملفات باللون البنفسجي النيون المضيء والمريح جداً للعين */
 pre {
     padding: 25px;
     overflow-x: auto;
     white-space: pre;
     font-family: 'Fira Code', 'Courier New', monospace;
-    color: var(--neon-green);
-    text-shadow: 0 0 3px rgba(57, 255, 20, 0.3);
+    color: #c084fc;   /* درجة بنفسجية نيون فاتحة ومضيئة لسهولة القراءة وفحص الـ Zip */
+    text-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
     direction: ltr;
     max-height: 500px;
     overflow-y: auto;
     font-size: 0.95rem;
     line-height: 1.7;
-    background-color: #07090e;
+    background-color: #05040a;
 }
 
 /* التذييل الفوتر */
@@ -274,7 +276,7 @@ pre {
     color: var(--neon-cyan);
     text-decoration: none;
     font-weight: 600;
-    text-shadow: 0 0 5px rgba(0, 242, 254, 0.3);
+    text-shadow: 0 0 5px rgba(6, 182, 212, 0.3);
 }
 
 /* توافق ممتاز مع الشاشات والموبايل */
