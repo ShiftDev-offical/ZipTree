@@ -1,14 +1,18 @@
-/* تعريف الألوان المريحة للعين (Dark Slate Palette) */
+/* تصميم نيون احترافي ومستقبلي (Cyberpunk / Neon Tech Style) */
 :root {
-    --bg-dark: #12141c;       /* خلفية الموقع الأساسية هادئة جداً ومطفية */
-    --bg-card: #1a1d29;       /* خلفية الحاويات والهيدر */
-    --bg-input: #222738;      /* خلفية صناديق المدخلات */
-    --accent-color: #38bdf8;  /* لون أزرق سماوي مريح للعين بديل للفسفوري */
-    --accent-hover: #0ea5e9;  /* درجة داكنة عند التمرير */
-    --text-primary: #f1f5f9;  /* نصوص رئيسية بيضاء دافئة */
-    --text-muted: #94a3b8;     /* نصوص فرعية رمادية مريحة */
-    --code-color: #34d399;     /* لون أخضر هادئ لعرض الأكواد والشجرة */
-    --border-subtle: #2e354f; /* حدود خفيفة غير مزعجة للعين */
+    --bg-dark: #0a0c10;       /* خلفية شديدة السواد لإبراز النيون */
+    --bg-card: #121620;       /* خلفية الحاويات والهيدر */
+    --bg-input: #181d2a;      /* خلفية صناديق المدخلات */
+    
+    /* ألوان النيون المضيئة */
+    --neon-cyan: #00f2fe;     /* نيون سيان للأساسيات والظلال */
+    --neon-purple: #4facfe;   /* نيون أزرق متدرج مع البنفسجي */
+    --neon-green: #39ff14;    /* نيون أخضر مخصص للشجرة والأكواد */
+    --neon-pink: #ff007f;     /* نيون بينك مخصص للشارات والتأثيرات */
+    
+    --text-primary: #f1f5f9;  
+    --text-muted: #64748b;     
+    --border-subtle: #1e293b; 
 }
 
 * {
@@ -27,14 +31,16 @@ body {
     line-height: 1.6;
 }
 
-/* تصميم الهيدر الاحترافي */
+/* هيدر نيون محترم */
 .main-header {
     background-color: var(--bg-card);
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 2px solid var(--border-subtle);
     padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
+    /* ظل نيون خفيف أسفل الهيدر */
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.1);
 }
 
 .header-container {
@@ -53,22 +59,24 @@ body {
 
 .brand-logo {
     font-size: 1.5rem;
-    color: var(--accent-color);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
 }
 
 .brand-name {
     font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
 }
 
 .brand-accent {
-    color: var(--accent-color);
+    color: var(--neon-cyan);
     font-weight: 400;
-    font-size: 1.1rem;
+    text-shadow: 0 0 8px var(--neon-cyan);
 }
 
-/* زر العودة للبورتفوليو */
+/* زر العودة للبورتفوليو بتأثير نيون عند التمرير */
 .btn-back {
     display: inline-flex;
     align-items: center;
@@ -81,20 +89,22 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     border: 1px solid var(--border-subtle);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-back:hover {
-    background-color: var(--border-subtle);
-    border-color: var(--accent-color);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink);
+    color: #fff;
+    transform: translateY(-1px);
 }
 
 .btn-back .btn-icon {
     display: inline-block;
-    transform: rotate(180deg); /* لجعل السهم يشير لليمين متوافقاً مع الاتجاه العربي */
+    transform: rotate(180deg);
 }
 
-/* الحاوية الرئيسية للمحتوى */
+/* المحتوى الرئيسي */
 .main-content {
     flex: 1;
     display: flex;
@@ -114,10 +124,13 @@ body {
 }
 
 .intro-section h1 {
-    color: var(--text-primary);
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 12px;
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.3));
 }
 
 .subtitle {
@@ -127,32 +140,36 @@ body {
     margin: 0 auto;
 }
 
-/* صندوق الرفع الراقي */
+/* صندوق رفع الملفات النيون المضيء */
 .upload-box {
     background-color: var(--bg-card);
-    border: 2px dashed #475569;
-    padding: 40px 20px;
+    border: 2px dashed var(--neon-cyan);
+    padding: 50px 20px;
     text-align: center;
     border-radius: 14px;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .upload-box:hover, .upload-box.dragover {
-    border-color: var(--accent-color);
-    background-color: #1e2335;
-    transform: translateY(-2px);
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.3), inset 0 0 15px rgba(0, 242, 254, 0.1);
+    background-color: #151a28;
+    transform: translateY(-3px);
 }
 
 .upload-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan));
 }
 
 #uploadText {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
 .upload-hint {
@@ -166,40 +183,42 @@ input[type="file"] {
     display: none;
 }
 
-/* أزرار العمليات */
+/* زر التحميل النيون المتوهج */
 .btn-action {
-    background-color: var(--accent-color);
-    color: #0f172a;
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+    color: #000;
     border: none;
-    padding: 14px 28px;
+    padding: 15px 35px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
     display: none;
     margin: 25px auto 0 auto;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-family: 'Cairo', sans-serif;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.15);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
 }
 
 .btn-action:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-1px);
+    box-shadow: 0 0 35px rgba(0, 242, 254, 0.7);
+    transform: translateY(-2px);
+    letter-spacing: 0.5px;
 }
 
-/* منطقة المعاينة والشجرة */
+/* شاشة المعاينة والشجرة */
 .output-wrapper {
-    margin-top: 30px;
+    margin-top: 35px;
     background-color: var(--bg-card);
     border-radius: 14px;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .output-header {
-    background-color: #151822;
-    padding: 12px 20px;
+    background-color: #0b0d14;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -212,30 +231,36 @@ input[type="file"] {
     color: var(--text-muted);
 }
 
+/* شارة الحالة بالنيون الوردي */
 .status-badge {
     font-size: 0.8rem;
-    padding: 4px 10px;
-    background-color: var(--bg-input);
-    color: var(--accent-color);
+    padding: 5px 12px;
+    background-color: rgba(255, 0, 127, 0.1);
+    color: var(--neon-pink);
+    border: 1px solid var(--neon-pink);
     border-radius: 6px;
     font-weight: 600;
+    text-shadow: 0 0 5px var(--neon-pink);
+    box-shadow: 0 0 8px rgba(255, 0, 127, 0.2);
 }
 
+/* شجرة الأكواد باللون الأخضر النيون Matrix Style */
 pre {
     padding: 25px;
     overflow-x: auto;
     white-space: pre;
     font-family: 'Fira Code', 'Courier New', monospace;
-    color: var(--code-color);
+    color: var(--neon-green);
+    text-shadow: 0 0 3px rgba(57, 255, 20, 0.3);
     direction: ltr;
     max-height: 500px;
     overflow-y: auto;
     font-size: 0.95rem;
-    line-height: 1.6;
-    background-color: #0f111a;
+    line-height: 1.7;
+    background-color: #07090e;
 }
 
-/* التذييل */
+/* التذييل الفوتر */
 .main-footer {
     background-color: var(--bg-card);
     border-top: 1px solid var(--border-subtle);
@@ -246,38 +271,29 @@ pre {
 }
 
 .main-footer a {
-    color: var(--accent-color);
+    color: var(--neon-cyan);
     text-decoration: none;
     font-weight: 600;
+    text-shadow: 0 0 5px rgba(0, 242, 254, 0.3);
 }
 
-/* Media Queries - التوافق التام مع كل الشاشات */
+/* توافق ممتاز مع الشاشات والموبايل */
 @media (max-width: 768px) {
-    body {
-        padding: 0;
-    }
     .main-content {
         padding: 20px 15px;
     }
     .intro-section h1 {
-        font-size: 1.75rem;
+        font-size: 1.9rem;
     }
     .subtitle {
         font-size: 0.95rem;
     }
     .upload-box {
-        padding: 30px 15px;
-    }
-    #uploadText {
-        font-size: 1rem;
+        padding: 35px 15px;
     }
     pre {
         padding: 15px;
         font-size: 0.85rem;
-    }
-    .header-container {
-        flex-direction: row;
-        gap: 10px;
     }
     .brand-name {
         font-size: 1.1rem;
