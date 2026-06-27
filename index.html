@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>مستخرج شجرة ملفات ZIP المتصلة | ShiftDev Tools</title>
+    <meta name="description" content="أداة احترافية ومجانية لاستخراج هيكل وشجرة ملفات ZIP بشكل متصل ومنظم للمبرمجين والمطورين. تتيح لك الأداة استعراض شجرة المشروع وتحميلها كملف نصي بنقرة واحدة.">
+    <meta name="keywords" content="استخراج شجرة ملفات, ملف zip, مبرمجين, هيكل مشروع, ShiftDev, أدوات المطورين, جافا سكريبت, جيت هب, برمجة أسيوط">
+    <meta name="author" content="ShiftDev - Hazem Khaled">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="مستخرج شجرة ملفات ZIP المتصلة | ShiftDev Tools">
+    <meta property="og:description" content="استخرج هيكل وشجرة ملفات أي مشروع مضغوط ZIP بشكل متصل ومرتب واحترافي مجاناً وبسرعة فائقة.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_EG">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>مستخرج هيكل ملفات ZIP المتصل 📂</h1>
+    <p class="subtitle">قم برفع مشروعك لمعاينة الشجرة البرمجية وهيكل المجلدات متصلاً بالكامل بدون فراغات</p>
+    
+    <div class="upload-box" id="dropZone">
+        <p id="uploadText">اسحب ملف الـ ZIP هنا أو اضغط للتصفح</p>
+        <span>يدعم الملفات المضغوطة بامتداد .zip فقط</span>
+        <input type="file" id="zipInput" accept=".zip">
+    </div>
+
+    <button id="downloadBtn" class="btn">تحميل الشجرة كـ ملف نصي (TXT)</button>
+    
+    <div class="output-wrapper">
+        <pre id="output">شجرة هيكل الملفات ستظهر هنا بمجرد رفع الملف...</pre>
+    </div>
+</div>
+
+<div class="footer">
+    تم التطوير بواسطة فريق <a href="mailto:shiftdev.contact.me@gmail.com">ShiftDev</a> | حازم خالد
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
