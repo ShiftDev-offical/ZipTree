@@ -1,11 +1,10 @@
 let generatedTreeText = "";
 const zipInput = document.getElementById('zipInput');
 const dropZone = document.getElementById('dropZone');
+const statusBadge = document.getElementById('statusBadge');
 
-// Trigger file selector on box click
 dropZone.addEventListener('click', () => zipInput.click());
 
-// Drag & Drop event handlers
 ['dragenter', 'dragover'].forEach(eventName => {
     dropZone.addEventListener(eventName, (e) => { 
         e.preventDefault(); 
@@ -37,12 +36,12 @@ zipInput.addEventListener('change', function(e) {
 function handleZipFile(file) {
     document.getElementById('uploadText').innerText = `الملف المختار: ${file.name}`;
     document.getElementById('output').innerText = "جاري قراءة الملف وبناء الشجرة المتصلة ذكياً...";
+    statusBadge.innerText = "جاري المعالجة...";
 
     const reader = new FileReader();
     reader.onload = function(event) {
         JSZip.loadAsync(event.target.result).then(function(zip) {
             
-            // Build tree representation in memory (Preserving core logic)
             let root = { folders: {}, files: [] };
 
             Object.keys(zip.files).forEach(function(path) {
@@ -65,7 +64,6 @@ function handleZipFile(file) {
                 }
             });
 
-            // Tree printing and intelligent connector mapping logic
             let treeOutput = "";
             
             function renderTree(node, prefix = "") {
@@ -75,7 +73,6 @@ function handleZipFile(file) {
                 let totalElements = sortedFolders.length + sortedFiles.length;
                 let currentIndex = 0;
 
-                // Process folders first
                 sortedFolders.forEach(function(folderName) {
                     currentIndex++;
                     let isLast = (currentIndex === totalElements);
@@ -87,7 +84,6 @@ function handleZipFile(file) {
                     renderTree(node.folders[folderName], newPrefix);
                 });
 
-                // Process files next
                 sortedFiles.forEach(function(fileName) {
                     currentIndex++;
                     let isLast = (currentIndex === totalElements);
@@ -97,17 +93,17 @@ function handleZipFile(file) {
                 });
             }
 
-            // Start rendering from root level
             treeOutput += `📁 ${file.name}\n`;
             renderTree(root, "");
 
-            // Update UI with generated output
             generatedTreeText = treeOutput;
             document.getElementById('output').innerText = treeOutput;
             document.getElementById('downloadBtn').style.display = "block";
+            statusBadge.innerText = "تم التوليد بنجاح! 🎉";
 
         }).catch(function(err) {
             document.getElementById('output').innerText = "حدث خطأ أثناء معالجة ملف الـ ZIP: " + err.message;
+            statusBadge.innerText = "فشلت العملية";
         });
     };
 
